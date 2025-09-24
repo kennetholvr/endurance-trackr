@@ -8,10 +8,14 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region  = var.region
   profile = "personal"
-}
 
-resource "aws_s3_bucket" "sandbox" {
-  bucket = "endurance-kenneth-sandbox-001" # must be globally unique!
+  default_tags {
+    tags = {
+      Project = "FitnessForm"
+      Env     = var.env
+      Owner   = "Ken"
+    }
+  }
 }
