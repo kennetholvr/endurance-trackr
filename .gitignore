@@ -13,5 +13,20 @@ override.tf.json
 # Keep the lock file (helps provider reproducibility)
 !.terraform.lock.hcl
 
+# Node / Lambda
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pnpm-lock.yaml
+package-lock.json
+
+# Lambda build artifacts
+.build/
+dist/
+*.zip
+coverage/
+
 # macOS
 .DS_Store
